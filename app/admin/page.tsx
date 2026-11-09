@@ -216,12 +216,9 @@ export default function AdminPage() {
                 required
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
-                placeholder="أدخل كلمة المرور (الافتراضية: admin)"
+                placeholder="أدخل كلمة المرور..."
                 className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
               />
-              <p className="text-[11px] text-slate-500 mt-1">
-                كلمة المرور الافتراضية الأولية: <span className="font-mono text-emerald-400">admin</span> (يمكنك تغييرها من داخل اللوحة).
-              </p>
             </div>
 
             {authError && (

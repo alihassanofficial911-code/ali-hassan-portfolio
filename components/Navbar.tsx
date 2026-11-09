@@ -10,7 +10,6 @@ import {
   Menu, 
   X, 
   Download, 
-  Lock, 
   Cpu, 
   Film, 
   Code2,
@@ -126,15 +125,6 @@ export default function Navbar({ cvUrl }: NavbarProps) {
                 <span>{t('تحميل السيرة الذاتية', 'Download CV')}</span>
               </a>
             )}
-
-            {/* Admin discrete entry */}
-            <Link
-              href="/admin"
-              className="p-2 rounded-lg text-slate-400 hover:text-cyan-400 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-              title={t('لوحة التحكم', 'Admin Portal')}
-            >
-              <Lock className="w-4 h-4" />
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -187,14 +177,6 @@ export default function Navbar({ cvUrl }: NavbarProps) {
                 <span>{t('تحميل السيرة الذاتية (CV)', 'Download CV')}</span>
               </a>
             )}
-            <Link
-              href="/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-slate-800 text-slate-300 font-medium text-sm"
-            >
-              <Lock className="w-4 h-4" />
-              <span>{t('لوحة تحكم الموقع (/admin)', 'Admin Dashboard (/admin)')}</span>
-            </Link>
           </div>
         </div>
       )}

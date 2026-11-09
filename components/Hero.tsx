@@ -149,6 +149,51 @@ export default function Hero({ profile }: HeroProps) {
               </a>
             </div>
 
+            {/* Interactive Stats Bar */}
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 border-t border-slate-200 dark:border-slate-800/80">
+              <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-emerald-500/20 shadow-sm flex items-center gap-3 group hover:border-emerald-500/50 transition">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:scale-105 transition">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                </div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+                    +15
+                  </div>
+                  <p className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 leading-snug">
+                    {t('مشاريع وتطبيقات منجزة', 'Completed Projects & Apps')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-purple-500/20 shadow-sm flex items-center gap-3 group hover:border-purple-500/50 transition">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20 group-hover:scale-105 transition">
+                  <Film className="w-5 h-5 text-purple-400" />
+                </div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-300">
+                    +500
+                  </div>
+                  <p className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 leading-snug">
+                    {t('ساعة مونتاج وتدريج DaVinci', 'Hours DaVinci Color & VFX')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-cyan-500/20 shadow-sm flex items-center gap-3 group hover:border-cyan-500/50 transition">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20 group-hover:scale-105 transition">
+                  <GraduationCap className="w-5 h-5 text-cyan-400" />
+                </div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">
+                    4
+                  </div>
+                  <p className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 leading-snug">
+                    {t('سنوات دراسة تكنولوجية وهندسية', 'Years Advanced Tech Study')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           {/* Right Column: Avatar & Interactive Visual Card */}

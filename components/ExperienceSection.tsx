@@ -90,7 +90,7 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
                 {/* Content Box */}
                 <div className="w-full md:w-1/2 md:px-8">
                   <Reveal delay={index * 100}>
-                    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-xl hover:border-slate-300 dark:hover:border-slate-700 transition duration-300 group">
+                    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl hover:border-emerald-500/40 transition duration-300 group">
                     
                     {/* Header info */}
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -99,13 +99,13 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
                         <span>{t(badge.labelAr, badge.labelEn)}</span>
                       </span>
 
-                      <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+                      <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300 font-medium">
                         <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3 text-emerald-400" />
+                          <Calendar className="w-3.5 h-3.5 text-emerald-400" />
                           <span>{lang === 'ar' ? exp.period : exp.periodEn}</span>
                         </span>
                         <span className="flex items-center gap-1">
-                          <MapPin className="w-3 h-3 text-cyan-400" />
+                          <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                           <span>{lang === 'ar' ? exp.location : exp.locationEn}</span>
                         </span>
                       </div>
@@ -119,8 +119,8 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
                       {lang === 'ar' ? exp.company : exp.companyEn}
                     </p>
 
-                    {/* Description bullet points */}
-                    <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                    {/* Description bullet points with enhanced crisp contrast */}
+                    <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
                       {(lang === 'ar' ? exp.description : exp.descriptionEn).map((point, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />

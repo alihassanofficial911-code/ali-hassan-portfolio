@@ -26,6 +26,8 @@ export default function ProjectsSection({ projects }: ProjectsProps) {
   const { lang, t } = useLang();
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+  const [selectedVideoTitle, setSelectedVideoTitle] = useState<string>('');
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   const categories: { key: ProjectCategory; labelAr: string; labelEn: string; icon: any; count: number }[] = [
     { 
@@ -163,18 +165,36 @@ export default function ProjectsSection({ projects }: ProjectsProps) {
                 <div
                   className={`h-full flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/80 shadow-xl transition-all duration-300 hover:-translate-y-1.5 ${theme.glow} group`}
                 >
-                {/* Media Preview Container */}
+                {/* Media Preview Container with Fallback */}
                 <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-950">
-                  <Image
-                    src={project.imageUrl || 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop'}
-                    alt={lang === 'ar' ? project.title : project.titleEn}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/30" />
+                  {imageErrors[project.id] || !project.imageUrl ? (
+                    <div className={`w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br ${
+                      project.category === 'video'
+                        ? 'from-purple-950 via-slate-950 to-indigo-950'
+                        : project.category === 'electronics'
+                        ? 'from-emerald-950 via-slate-950 to-teal-950'
+                        : 'from-cyan-950 via-slate-950 to-blue-950'
+                    }`}>
+                      <div className={`p-4 rounded-2xl mb-2 border ${theme.badge}`}>
+                        <ThemeIcon className="w-8 h-8" />
+                      </div>
+                      <span className="text-xs font-bold text-white/90 line-clamp-1 max-w-[85%]">
+                        {lang === 'ar' ? project.title : project.titleEn}
+                      </span>
+                    </div>
+                  ) : (
+                    <Image
+                      src={project.imageUrl}
+                      alt={lang === 'ar' ? project.title : project.titleEn}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={() => setImageErrors((prev) => ({ ...prev, [project.id]: true }))}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 
                   {/* Top Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold border backdrop-blur-md pointer-events-auto ${theme.badge}`}>
                       <ThemeIcon className="w-3.5 h-3.5" />
                       <span>{t(theme.labelAr, theme.labelEn)}</span>
@@ -191,8 +211,11 @@ export default function ProjectsSection({ projects }: ProjectsProps) {
                   {/* Video Play Overlay Button */}
                   {project.videoUrl && (
                     <button
-                      onClick={() => setSelectedVideoUrl(project.videoUrl || null)}
-                      className="absolute inset-0 flex items-center justify-center group/btn"
+                      onClick={() => {
+                        setSelectedVideoUrl(project.videoUrl || null);
+                        setSelectedVideoTitle(lang === 'ar' ? project.title : project.titleEn);
+                      }}
+                      className="absolute inset-0 flex items-center justify-center group/btn z-10"
                       aria-label="Play Video"
                     >
                       <div className="w-14 h-14 rounded-full bg-purple-600/90 hover:bg-purple-500 text-white flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover/btn:scale-110 border border-white/20">
@@ -280,23 +303,26 @@ export default function ProjectsSection({ projects }: ProjectsProps) {
 
       {/* Video Lightbox Modal */}
       {selectedVideoUrl && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in">
           <div className="relative w-full max-w-4xl bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-            <div className="flex items-center justify-between p-4 border-b border-slate-800">
-              <span className="text-sm font-bold text-white flex items-center gap-2">
-                <Film className="w-4 h-4 text-purple-400" />
-                {t('مشغل أعمال المونتاج والفيديو', 'Video & Color Grading Showcase Player')}
+            <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-slate-900/60">
+              <span className="text-sm font-bold text-white flex items-center gap-2 truncate">
+                <Film className="w-4 h-4 text-purple-400 shrink-0" />
+                <span className="truncate">{selectedVideoTitle || t('مشغل أعمال المونتاج والفيديو', 'Video & Color Grading Showcase')}</span>
               </span>
               <button
-                onClick={() => setSelectedVideoUrl(null)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800"
+                onClick={() => {
+                  setSelectedVideoUrl(null);
+                  setSelectedVideoTitle('');
+                }}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="relative aspect-video w-full bg-black">
-              {selectedVideoUrl.includes('youtube') || selectedVideoUrl.includes('youtu.be') ? (
+            <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+              {selectedVideoUrl.includes('youtube.com') || selectedVideoUrl.includes('youtu.be') ? (
                 <iframe
                   src={getEmbedUrl(selectedVideoUrl)}
                   className="w-full h-full border-0"
@@ -308,6 +334,7 @@ export default function ProjectsSection({ projects }: ProjectsProps) {
                   src={selectedVideoUrl}
                   controls
                   autoPlay
+                  playsInline
                   className="w-full h-full object-contain"
                 />
               )}
