@@ -8,11 +8,13 @@ import initialData from '@/data/portfolio-db.json';
 const DATA_PATH = path.join(process.cwd(), 'data', 'portfolio-db.json');
 const TMP_DATA_PATH = path.join('/tmp', 'portfolio-db.json');
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gzwtsldedcplrowmdlhx.supabase.co';
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6d3RzbGRlZGNwbHJvd21kbGh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4OTIxNzksImV4cCI6MjEwODQ2ODE3OX0.HrfD4cUehV124-x_i5lc-arSvAqI0SASo2iYBOu2LU0';
+
 // In-memory cache for fast runtime response
 let memoryCache: PortfolioData | null = null;
 
 function getActivePath(): string {
-  // If running in a serverless environment (like Vercel) and /tmp file exists, prefer it
   try {
     if (fs.existsSync(TMP_DATA_PATH)) {
       return TMP_DATA_PATH;
@@ -26,6 +28,7 @@ export function getPortfolioData(): PortfolioData {
     return memoryCache;
   }
 
+  // 1. Try reading from local file system
   try {
     const activePath = getActivePath();
     if (fs.existsSync(activePath)) {
@@ -44,7 +47,7 @@ export function getPortfolioData(): PortfolioData {
     memoryCache = initialData as PortfolioData;
     return memoryCache;
   } catch (error) {
-    console.error('Error reading portfolio data:', error);
+    console.error('Local read fallback:', error);
     memoryCache = initialData as PortfolioData;
     return memoryCache;
   }
@@ -53,23 +56,48 @@ export function getPortfolioData(): PortfolioData {
 export function savePortfolioData(data: PortfolioData): boolean {
   memoryCache = data;
 
-  // 1. Try writing to primary project path (works locally and in standard containers)
+  // 1. Save to local disk
   try {
     const dir = path.dirname(DATA_PATH);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf8');
-    return true;
   } catch (error) {
-    // 2. If write fails (e.g. read-only filesystem on Vercel serverless), write to /tmp
     try {
       fs.writeFileSync(TMP_DATA_PATH, JSON.stringify(data, null, 2), 'utf8');
-      return true;
     } catch (tmpError) {
-      console.error('Fallback /tmp write error:', tmpError);
-      return false;
+      console.warn('Local disk write failed, continuing with in-memory & cloud sync');
     }
+  }
+
+  // 2. Asynchronously sync to Supabase Cloud if configured
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    syncToSupabase(data).catch((err) => {
+      console.error('Supabase cloud sync error:', err);
+    });
+  }
+
+  return true;
+}
+
+async function syncToSupabase(data: PortfolioData): Promise<void> {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/portfolio_data`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates',
+      },
+      body: JSON.stringify({
+        id: 'current',
+        data,
+      }),
+    });
+  } catch (e) {
+    console.error('Failed to sync data to Supabase:', e);
   }
 }
 
@@ -142,6 +170,20 @@ export function addContactMessage(message: Omit<ContactMessage, 'id' | 'createdA
   if (!current.messages) current.messages = [];
   current.messages.unshift(newMessage);
   savePortfolioData(current);
+
+  // Also sync message to Supabase portfolio_messages table
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    fetch(`${SUPABASE_URL}/rest/v1/portfolio_messages`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newMessage),
+    }).catch((e) => console.error('Error inserting message to Supabase:', e));
+  }
+
   return newMessage;
 }
 
@@ -149,7 +191,19 @@ export function deleteContactMessage(id: string): boolean {
   const current = getPortfolioData();
   if (!current.messages) return true;
   current.messages = current.messages.filter((m) => m.id !== id);
-  return savePortfolioData(current);
+  savePortfolioData(current);
+
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    fetch(`${SUPABASE_URL}/rest/v1/portfolio_messages?id=eq.${id}`, {
+      method: 'DELETE',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+      },
+    }).catch((e) => console.error('Error deleting message from Supabase:', e));
+  }
+
+  return true;
 }
 
 export function verifyAdminPassword(input: string): boolean {
