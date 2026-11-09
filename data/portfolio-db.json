@@ -1,0 +1,444 @@
+{
+  "profile": {
+    "name": "علي حسن",
+    "nameEn": "Ali Hassan",
+    "title": "طالب بالسنة الرابعة - قسم إلكترونيات | مونتير ومصحح ألوان DaVinci Resolve | أخصائي إلكترونيات وهندسة سيارات",
+    "titleEn": "4th-Year Electronics Engineering Student | DaVinci Resolve Video Editor & Colorist | Automotive & Electronics Specialist",
+    "bio": "طالب بالسنة الرابعة في قسم الإلكترونيات بالكلية المصرية الكورية للتكنولوجيا الصناعية والطاقة. أجمع بين الفهم الهندسي العميق للدوائر الإلكترونية وأنظمة تشخيص السيارات الحديثة (ECU, OBD-II, SOLIDWORKS)، والخبرة العملية في مراكز الخدمة الكبرى (مثل مركز خدمة نيسان ومصر حلوان للسيارات)، وبين الرؤية الإبداعية السينمائية كمونتير محترف ومصحح ألوان في DaVinci Resolve & Fusion، مع شغفي بتطوير منصات الويب السحابية وتطبيقات الذكاء الاصطناعي مثل منصة Medicology.",
+    "bioEn": "4th-Year Electronics Engineering student at the Egyptian-Korean Faculty of Technological Industry and Energy. Bridging technical mastery in electronic control circuits and automotive diagnostic systems (ECU, OBD-II, SOLIDWORKS) tested through certified internships at major service centers (Nissan Service Center, Misr Helwan Automotive), with cinematic storytelling as a DaVinci Resolve & Fusion Video Editor and Colorist, alongside engineering full-stack web and AI applications such as Medicology.",
+    "email": "alihassanofficial911@gmail.com",
+    "phone": "+20 100 000 0000",
+    "whatsapp": "+201000000000",
+    "location": "القاهرة، مصر",
+    "locationEn": "Cairo, Egypt",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    "cvUrl": "/uploads/Ali_Hassan_CV.pdf",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/ali-hassan",
+      "github": "https://github.com/alihassan",
+      "youtube": "https://youtube.com/@alihassan",
+      "behance": "https://behance.net/alihassan",
+      "whatsapp": "https://wa.me/201000000000",
+      "email": "mailto:alihassanofficial911@gmail.com"
+    }
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "منصة Medicology الطبية السحابية التفاعلية",
+      "titleEn": "Medicology - Interactive Cloud Medical Platform",
+      "category": "web",
+      "description": "منصة ويب متكاملة تقدم حلولاً تفاعلية وبنك أسئلة ومصادر طبية متقدمة مبنية بتقنيات Next.js السحابية وواجهات مستخدم سريعة وعصرية مع دعم تجربة المستخدم الفائقة.",
+      "descriptionEn": "Comprehensive cloud web platform offering interactive medical learning, question banks, and dynamic educational tools built with Next.js and high-performance serverless architecture.",
+      "tools": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vercel",
+        "REST APIs"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "",
+      "demoUrl": "https://medicology-eg.vercel.app",
+      "githubUrl": "https://github.com/alihassan/medicology",
+      "featured": true,
+      "date": "2024"
+    },
+    {
+      "id": "proj-2",
+      "title": "فيلم إعلاني وسينمائي: تصحيح ألوان ومؤثرات DaVinci Resolve",
+      "titleEn": "Cinematic Commercial: DaVinci Resolve Color Grading & Fusion VFX",
+      "category": "video",
+      "description": "مشروع مونتاج متكامل وتدريج ألوان سينمائي متقدم باستخدام DaVinci Resolve Studio و DaVinci Fusion مع ضبط تباين الألوان الاحترافي (Color Wheels & Power Windows)، ومطابقة الكاميرات وتصميم المؤثرات البصرية والصوتية في Fairlight.",
+      "descriptionEn": "Complete video post-production project featuring advanced cinematic color grading using DaVinci Resolve Studio & Fusion. Includes custom LUTs, color management, camera matching, motion tracking, and Fairlight audio mastering.",
+      "tools": [
+        "DaVinci Resolve Studio",
+        "DaVinci Fusion",
+        "Color Wheels",
+        "ACES Workflow",
+        "Fairlight Audio"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "demoUrl": "",
+      "githubUrl": "",
+      "featured": true,
+      "date": "2024"
+    },
+    {
+      "id": "proj-3",
+      "title": "نظام فحص وتشخيص إلكترونيات السيارات عبر بروتوكول OBD-II",
+      "titleEn": "Automotive Electronic Diagnostic & Telemetry System via OBD-II",
+      "category": "electronics",
+      "description": "تصميم وبناء نموذج محاكاة وقراءة حية لبيانات وحدة التحكم الإلكترونية للمحرك (ECU) باستخدام متحكمات دقيقة ومستشعرات قراءة الحساسات (RPM, Speed, Throttle, Coolant Temp) مع إنذار فوري للأعطال.",
+      "descriptionEn": "Design and prototyping of a real-time ECU telemetry and error diagnosis unit using microcontrollers and OBD-II CAN bus protocol to read sensor parameters and alert on diagnostic trouble codes.",
+      "tools": [
+        "OBD-II / CAN Bus",
+        "Microcontrollers",
+        "Sensors & Actuators",
+        "Circuit Design",
+        "SOLIDWORKS"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "",
+      "demoUrl": "",
+      "githubUrl": "https://github.com/alihassan/ecu-diagnostics",
+      "featured": true,
+      "date": "2024"
+    },
+    {
+      "id": "proj-4",
+      "title": "نمذجة ميكانيكية وإلكترونية ثلاثية الأبعاد بـ SOLIDWORKS",
+      "titleEn": "3D Electro-Mechanical CAD Modeling in SOLIDWORKS",
+      "category": "electronics",
+      "description": "تصميم نماذج ثلاثية الأبعاد دقيقة لهياكل إلكترونية وصناديق حماية الدوائر الحساسة للسيارات المقاومة للحرارة والاهتزازات مع محاكاة الإجهادات والحركة.",
+      "descriptionEn": "High-precision 3D CAD modeling and stress analysis for automotive electronic module enclosures, heat-dissipation mounts, and vibration-proof casings in SOLIDWORKS.",
+      "tools": [
+        "SOLIDWORKS",
+        "3D CAD",
+        "Simulation",
+        "Thermal Modeling",
+        "Prototyping"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "",
+      "demoUrl": "",
+      "githubUrl": "",
+      "featured": false,
+      "date": "2023"
+    },
+    {
+      "id": "proj-5",
+      "title": "ريل ومونتاج إعلاني سريع للشبكات الاجتماعية (Social Media Tech Reel)",
+      "titleEn": "High-Energy Social Media Reel: Fusion Graphics & Sound Design",
+      "category": "video",
+      "description": "مونتاج ريل سريع الإيقاع يجمع بين الجرافيكس المتحرك وعناوين ثلاثية الأبعاد، وتزامن دقيق للإيقاع الصوتي مع تحرير الألوان لجذب المشاهدين في الثواني الأولى.",
+      "descriptionEn": "Fast-paced social media reel engineered with DaVinci Resolve and Fusion kinetic typography, sound effects synchronization, dynamic speed ramping, and vibrant color palettes.",
+      "tools": [
+        "DaVinci Resolve",
+        "Fusion VFX",
+        "Sound Design",
+        "Kinetic Typography"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "demoUrl": "",
+      "githubUrl": "",
+      "featured": false,
+      "date": "2024"
+    },
+    {
+      "id": "proj-6",
+      "title": "بوابة ويب لعرض البيانات الحية والتحليلات",
+      "titleEn": "Live Diagnostics & Telemetry Web Dashboard",
+      "category": "web",
+      "description": "لوحة بيانات تفاعلية متجاوبة تعرض مؤشرات الأداء الحية والرسوم البيانية وتنبيهات النظام مع ربط فوري بالبيانات وتصميم مظلم فاخر.",
+      "descriptionEn": "Responsive web analytics and diagnostics dashboard providing real-time data feeds, performance telemetry, charts, and dark-mode UI with Tailwind CSS.",
+      "tools": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Recharts",
+        "Node.js"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "",
+      "demoUrl": "",
+      "githubUrl": "https://github.com/alihassan/telemetry-dashboard",
+      "featured": false,
+      "date": "2024"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "role": "طالب بالسنة الرابعة - قسم الإلكترونيات",
+      "roleEn": "4th-Year Student - Electronics Department",
+      "company": "الكلية المصرية الكورية للتكنولوجيا الصناعية والطاقة",
+      "companyEn": "Egyptian-Korean Faculty of Technological Industry and Energy",
+      "period": "2021 - حتى الآن",
+      "periodEn": "2021 - Present",
+      "location": "مصر",
+      "locationEn": "Egypt",
+      "type": "education",
+      "description": [
+        "دراسة تخصصية معمقة في الدوائر الإلكترونية المتكاملة، نظم التحكم الآلي، وهندسة الإشارات الرقمية.",
+        "العمل العملي في معامل النظم الكورية المتقدمة والمحاكاة الإلكترونية والبرمجة الصناعية.",
+        "تنفيذ مشاريع عملية وتطبيقات تطبيقية لربط الأجهزة الإلكترونية بالشبكات وأنظمة المراقبة الذكية."
+      ],
+      "descriptionEn": [
+        "In-depth academic and hands-on study in integrated electronic circuits, automation, and digital signal control.",
+        "Practical engineering work inside Korean-standard advanced tech laboratories and microelectronics simulations.",
+        "Developing capstone hardware-software systems integrating sensors, microcontrollers, and real-time computing."
+      ],
+      "certificateUrl": ""
+    },
+    {
+      "id": "exp-2",
+      "role": "تدريب مهني ميداني - تشخيص وصيانة إلكترونيات السيارات",
+      "roleEn": "Practical Field Intern - Automotive Electronics & Diagnostics",
+      "company": "مركز خدمة نيسان المعتمد (Nissan Service Center)",
+      "companyEn": "Authorized Nissan Service Center",
+      "period": "صيف 2023",
+      "periodEn": "Summer 2023",
+      "location": "القاهرة، مصر",
+      "locationEn": "Cairo, Egypt",
+      "type": "internship",
+      "description": [
+        "التدريب العملي على فحص شبكات الـ CAN-Bus ووحدات التحكم المركزية (ECU/BCM) لأحدث سيارات نيسان.",
+        "استخدام أجهزة الفحص المتطورة (Nissan Consult) لقراءة شفرات الأعطال وتشخيص الحساسات ومشغلات المحرك.",
+        "المشاركة في صيانة الدوائر الكهربائية، تتبع مسارات الأسلاك، واختبار كفاءة أنظمة الإشعال والشحن."
+      ],
+      "descriptionEn": [
+        "Field diagnosis of vehicle CAN-Bus networks and electronic control units (ECU/BCM) across modern Nissan fleets.",
+        "Operating OEM diagnostic computers (Nissan Consult) to extract DTC fault codes and calibrate actuator signals.",
+        "Hands-on wiring tracing, electrical troubleshooting, alternator/starter testing, and sensor verification."
+      ],
+      "certificateUrl": ""
+    },
+    {
+      "id": "exp-3",
+      "role": "تدريب هندسي وتقني متقدم في أنظمة السيارات",
+      "roleEn": "Advanced Automotive Engineering Intern",
+      "company": "مركز مصر حلوان للسيارات (Misr Helwan Automotive - MHA)",
+      "companyEn": "Misr Helwan Automotive (MHA)",
+      "period": "صيف 2024",
+      "periodEn": "Summer 2024",
+      "location": "حلوان، القاهرة",
+      "locationEn": "Helwan, Cairo",
+      "type": "internship",
+      "description": [
+        "اكتساب خبرة تطبيقية في فحص الأنظمة الميكانيكية والإلكترونية لسيارات الركوب والسيارات الحديثة المتطورة.",
+        "التعامل مع أنظمة حقن الوقود الإلكتروني (EFI)، أنظمة الفرامل المانعة للانغلاق (ABS)، ووسائد الهواء (SRS).",
+        "تطبيق معايير السلامة المهنية ومراقبة الجودة في جداول الصيانة الدورية الشاملة."
+      ],
+      "descriptionEn": [
+        "Extensive practical exposure to modern passenger car mechanical and electronic powertrain architectures.",
+        "Hands-on work with Electronic Fuel Injection (EFI), Anti-lock Braking Systems (ABS), and airbag telemetry (SRS).",
+        "Execution of comprehensive quality control standards and scheduled multi-point technical vehicle inspections."
+      ],
+      "certificateUrl": ""
+    },
+    {
+      "id": "exp-4",
+      "role": "مونتير فيديو ومصحح ألوان مستقل (Freelance Video Editor & Colorist)",
+      "roleEn": "Freelance Video Editor & Colorist (DaVinci Resolve)",
+      "company": "مستقل - استوديو الإنتاج الخاص",
+      "companyEn": "Freelance / Self-Employed",
+      "period": "2022 - حتى الآن",
+      "periodEn": "2022 - Present",
+      "location": "عن بُعد",
+      "locationEn": "Remote",
+      "type": "work",
+      "description": [
+        "مونتاج احترافي لإعلانات وفيديوهات تسويقية ومحتوى تقني باستخدام DaVinci Resolve Studio.",
+        "تدريج وتصحيح ألوان سينمائي (Cinematic Color Grading) بأسلوب احترافي متناغم مع الهوية البصرية للعلامات التجارية.",
+        "تصميم المؤثرات البصرية والجرافيكس عبر DaVinci Fusion وهندسة الصوت وميكساج المؤثرات بـ Fairlight."
+      ],
+      "descriptionEn": [
+        "Editing commercial advertisements, technical explainers, and high-impact social media video campaigns.",
+        "Advanced cinematic color grading, skin-tone isolation, gamut mapping, and mood palettes tailored to brand identity.",
+        "Creating custom motion graphics and compositing in DaVinci Fusion with broadcast-ready Fairlight audio master."
+      ],
+      "certificateUrl": ""
+    }
+  ],
+  "skillCategories": [
+    {
+      "id": "cat-electronics",
+      "name": "الإلكترونيات وهندسة السيارات",
+      "nameEn": "Electronics & Automotive Systems",
+      "color": "emerald",
+      "skills": [
+        {
+          "name": "دوائر التحكم الإلكتروني (Control Circuits)",
+          "nameEn": "Electronic Control Circuits",
+          "level": 95,
+          "badge": "Advanced"
+        },
+        {
+          "name": "تشخيص أعطال السيارات (OBD-II & ECU)",
+          "nameEn": "Automotive ECU & OBD-II Diagnostics",
+          "level": 90,
+          "badge": "Hands-on"
+        },
+        {
+          "name": "النمذجة ثلاثية الأبعاد بـ SOLIDWORKS",
+          "nameEn": "SOLIDWORKS 3D CAD Modeling",
+          "level": 88,
+          "badge": "Certified"
+        },
+        {
+          "name": "شبكات الحساسات ومشغلات السيارات (Sensors & Actuators)",
+          "nameEn": "Automotive Sensors & Actuators",
+          "level": 92,
+          "badge": "Field"
+        },
+        {
+          "name": "فحص وصيانة شبكات CAN-Bus",
+          "nameEn": "CAN-Bus Network Troubleshooting",
+          "level": 85,
+          "badge": "Practical"
+        },
+        {
+          "name": "تصميم وتصنيع اللوحات المطبوعة (PCB Design)",
+          "nameEn": "PCB Prototyping & Soldering",
+          "level": 82,
+          "badge": "Core"
+        }
+      ]
+    },
+    {
+      "id": "cat-video",
+      "name": "المونتاج وتدريج الألوان DaVinci Resolve",
+      "nameEn": "Video Editing & Color Grading",
+      "color": "purple",
+      "skills": [
+        {
+          "name": "DaVinci Resolve Studio",
+          "nameEn": "DaVinci Resolve Studio",
+          "level": 96,
+          "badge": "Pro"
+        },
+        {
+          "name": "تدريج الألوان السينمائي (Color Grading & ACES)",
+          "nameEn": "Cinematic Color Grading & ACES",
+          "level": 94,
+          "badge": "Expert"
+        },
+        {
+          "name": "المؤثرات البصرية والكومبوزيتنج (DaVinci Fusion VFX)",
+          "nameEn": "DaVinci Fusion VFX & Compositing",
+          "level": 86,
+          "badge": "Advanced"
+        },
+        {
+          "name": "هندسة وميكساج الصوت (Fairlight Audio)",
+          "nameEn": "Fairlight Audio Mixing & Design",
+          "level": 85,
+          "badge": "Studio"
+        },
+        {
+          "name": "تحرير الإعلانات والفيديوهات السريعة (Commercial Cuts)",
+          "nameEn": "Commercial & Social Media Rhythms",
+          "level": 92,
+          "badge": "High Impact"
+        }
+      ]
+    },
+    {
+      "id": "cat-dev",
+      "name": "تطوير الويب والتطبيقات السحابية",
+      "nameEn": "Web & Interactive Cloud Development",
+      "color": "cyan",
+      "skills": [
+        {
+          "name": "Next.js 14 (App Router)",
+          "nameEn": "Next.js 14 (App Router)",
+          "level": 90,
+          "badge": "Modern"
+        },
+        {
+          "name": "TypeScript & JavaScript",
+          "nameEn": "TypeScript & Modern JS",
+          "level": 88,
+          "badge": "Clean Code"
+        },
+        {
+          "name": "Tailwind CSS & Responsive UI",
+          "nameEn": "Tailwind CSS & Responsive UI",
+          "level": 95,
+          "badge": "Pixel Perfect"
+        },
+        {
+          "name": "RESTful APIs & Database Integration",
+          "nameEn": "REST APIs & Database Architecture",
+          "level": 86,
+          "badge": "Fullstack"
+        },
+        {
+          "name": "حلول الذكاء الاصطناعي والتطبيقات التفاعلية",
+          "nameEn": "AI Workflows & Interactive Apps",
+          "level": 84,
+          "badge": "Emerging"
+        }
+      ]
+    },
+    {
+      "id": "cat-languages",
+      "name": "اللغات والمهارات الشخصية",
+      "nameEn": "Languages & Professional Competencies",
+      "color": "amber",
+      "skills": [
+        {
+          "name": "اللغة العربية (اللغة الأم)",
+          "nameEn": "Arabic (Native)",
+          "level": 100,
+          "badge": "Native"
+        },
+        {
+          "name": "اللغة الإنجليزية (التقنية والهندسية)",
+          "nameEn": "English (Technical & Engineering)",
+          "level": 88,
+          "badge": "Fluent"
+        },
+        {
+          "name": "حل المشكلات المعقدة بالتشخيص الميداني",
+          "nameEn": "Field Diagnostics & Problem Solving",
+          "level": 95,
+          "badge": "Key"
+        },
+        {
+          "name": "إدارة المشاريع والتواصل الفعال",
+          "nameEn": "Project Delivery & Team Leadership",
+          "level": 90,
+          "badge": "Proven"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-1",
+      "title": "شهادة تدريب معتمدة في صيانة وتشخيص إلكترونيات السيارات",
+      "titleEn": "Certified Automotive Electronics & Diagnostics Specialist",
+      "issuer": "مركز خدمة نيسan المعتمد (Nissan Service Center)",
+      "issuerEn": "Authorized Nissan Service Center",
+      "date": "2023",
+      "credentialUrl": "#",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-dad6d3240e2b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "cert-2",
+      "title": "شهادة التدريب الميداني والتقني في هندسة السيارات",
+      "titleEn": "Field Engineering & Automotive Systems Certificate",
+      "issuer": "مركز مصر حلوان للسيارات (MHA)",
+      "issuerEn": "Misr Helwan Automotive (MHA)",
+      "date": "2024",
+      "credentialUrl": "#",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-dad6d3240e2b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "cert-3",
+      "title": "شهادة إتمام التدريب الأكاديمي والعملي لقسم الإلكترونيات",
+      "titleEn": "Advanced Practical Electronics Training Certificate",
+      "issuer": "الكلية المصرية الكورية للتكنولوجيا الصناعية والطاقة",
+      "issuerEn": "Egyptian-Korean Faculty of Technological Industry & Energy",
+      "date": "2024",
+      "credentialUrl": "#",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-dad6d3240e2b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      "id": "cert-4",
+      "title": "شهادة إتقان المونتاج وتصحيح الألوان السينمائي DaVinci Resolve",
+      "titleEn": "DaVinci Resolve Studio: Advanced Color Grading & Post-Production",
+      "issuer": "Blackmagic Design Certified Training Curriculum",
+      "issuerEn": "Blackmagic Design Certified Training Curriculum",
+      "date": "2023",
+      "credentialUrl": "#",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-dad6d3240e2b?q=80&w=800&auto=format&fit=crop"
+    }
+  ],
+  "messages": [],
+  "adminPassword": "admin"
+}
